@@ -6,19 +6,23 @@ interface HelloState {
   isToggled : boolean
 }
 
-class MouseOverHelloWithState extends React.Component<{ Greeting: string }, HelloState> {
+class MouseOverHelloWithState extends React.Component<{ Greeting: string, Increment: number }, HelloState> {
 
-  constructor(props: any){
+  constructor(props: any) {
     super(props)
     this.state = { clicks: 0, isToggled: false }
   }
 
-  handleMouseEnterOrLeave = (_: React.MouseEvent<HTMLDivElement>) => {
+  handleMouseEnterOrLeave = () => {
     this.setState({ clicks : this.state.clicks, isToggled : !this.state.isToggled})
   }
 
-  handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    this.setState({ clicks: this.state.clicks + 1, isToggled: this.state.isToggled })
+  // handleClick = () => {
+  //   this.setState({ clicks: this.props.Increment + this.state.clicks + 1, isToggled: this.state.isToggled })
+  // }
+
+  handleClick = () => {
+    this.setState((state, props) => ({ clicks: props.Increment + state.clicks}))
   }
 
   public render() {

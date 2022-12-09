@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import LifeCycleDemo from './components/LifeCycleDemo';
 import MouseOverHello from './components/MouseOverHello';
 import MouseOverHelloWithState from './components/MouseOverHelloWithState';
 
@@ -9,7 +10,9 @@ function App() {
       <header className="App-header">
         <MouseOverHello />
         <hr/>
-        <MouseOverHelloWithState Greeting="Salut !" />
+        <MouseOverHelloWithState Greeting="Salut !" Increment={2} />
+        <hr />
+        <LifeCycleDemo />
       </header>
     </div>
   );
