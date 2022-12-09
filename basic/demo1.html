@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<!-- 
+Usage :
+  npm i -g serve
+  serve ./index.html
+-->
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <title>React Application</title>
+   </head>
+   <body>
+      <div id="react-app"></div>
+      <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+      <script language="JavaScript">
+        element = React.createElement('div', {}, React.createElement('h1', {}, 'Hello from React 17 element!'));
+        ReactDOM.render(element, document.getElementById('react-app')); 
+      </script>
+   </body>
+</html>
