@@ -2,7 +2,7 @@ import React from 'react';
 import Price from './Price';
 import styles from './ProductWithNestedProps.module.css';
 
-interface ProductData {
+export interface ProductData {
   Category: string
   Name: string
   Price: number
@@ -24,5 +24,4 @@ class ProductWithNestedProps extends React.Component<ProductData> {
   }
 }
 
-export default ProductWithNestedProps; 
-
+export default ProductWithNestedProps;
