@@ -1,0 +1,12 @@
+.outline {
+  border: 1px solid lightskyblue;
+  padding: 1em;
+}
+
+.cost {
+  color: red;
+}
+
+.link {
+  color: green;
+}
