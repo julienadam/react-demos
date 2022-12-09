@@ -15,7 +15,7 @@ function App() {
         <hr />
         <ProductWithProps Price={47000} Url="https://inara.cz/elite/nearest-outfitting/?formbrief=1&pa3[]=10552" />
         <hr />
-        <ProductWithNestedProps Price={124560} Url="https://inara.cz/elite/nearest-outfitting/?formbrief=1&pa3[]=10552" />
+        <ProductWithNestedProps Price={124560} Name="Frameshift Drive" ModuleClass='5D' Category='Core Internal' Url="https://inara.cz/elite/nearest-outfitting/?formbrief=1&pa3[]=10552" />
       </header>
     </div>
   );
