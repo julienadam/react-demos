@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <a href="https://fr.reactjs.org/" className='link'>React JS Docs</a>
         <img src={logo} className="App-logo" alt="logo" />
         <Product />
       </header>
