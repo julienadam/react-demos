@@ -5,6 +5,7 @@ import MouseOverHello from './components/MouseOverHello';
 import MouseOverHelloWithState from './components/MouseOverHelloWithState';
 import FetchDemo from './components/FetchDemo/FetchDemo'
 import AsyncFetchDemo from './components/AsyncFetchDemo/AsyncFetchDemo';
+import FetchWithErrorHandling from './components/FetchWithErrorHandling/FetchWithErrorHandling';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         <hr />
         <h2>Async fetch demo</h2>
         <AsyncFetchDemo />
+        <hr />
+        <h2>Fetch with error handling</h2>
+        <FetchWithErrorHandling />
       </header>
     </div>
   );
