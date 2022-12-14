@@ -21,14 +21,14 @@ export class FetchWithErrorHandling extends Component<{}, State> {
     {
       case 'error':
         return (
-          <div className='alert-danger'>
+          <div>
             Error fetching data : {this.state.errorMessage}
           </div>
         );
       case 'info':
-        <div className="card text-center m-3">
-          <h5 className="card-header">Simple GET Request</h5>
-          <div className="card-body">
+        <div>
+          <h5>Simple GET Request</h5>
+          <div>
             Total react packages: {this.state.totalReactPackages}
           </div>
         </div>
