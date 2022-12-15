@@ -12,7 +12,7 @@ export function AddItem(props: {
   return (
     <div>
       <input
-        placeholder="What are you going to do next ?"
+        placeholder="What are you going to do ?"
         value={name}
         onChange={(event) => {
           setName(event.target.value);
