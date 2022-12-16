@@ -1,29 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { Component } from "react";
 import { TodoApi } from "../api/TodoApi";
 import { Todo } from "../api/data-contracts";
 import ListItems from "./ListItems";
-import { AddItem } from "./AddItem";
+import AddItem from "./AddItem";
 
 export const api = new TodoApi({
   baseUrl: "http://localhost:5190",
 });
 
-function TodoContainer(): JSX.Element {
-  const [items, setItems] = useState<Todo[]>([]);
+class TodoContainer extends Component<{}, Todo[]> {
 
-  useEffect(() => {
-    (async () => {
-      const res = await api.todoList();
-      setItems(res.data);
-    })();
-  }, []);
+  setItems(items : Todo[]) {
+    this.setState(items);
+  }
 
-  return (
-    <>
-        <ListItems items={items} />
-        <AddItem items={items} setItems={setItems} />
-    </>
-  );
+  componentDidMount(): void {
+    api.todoList().then(v => 
+      this.setItems(v.data));
+  }
+
+  getItems() : Todo[] {
+    return this.state.map((v, i) => {
+      return {
+      id: v.id,
+      completed: v.completed,
+      title: v.title,
+      order: v.order
+    }});
+  }
+
+  render(){
+    return (
+      <>
+        <ListItems items={this.getItems()} />
+        <AddItem items={this.getItems()} setItems={this.setItems} />
+      </>
+    );
+  }
 }
 
 export default TodoContainer;

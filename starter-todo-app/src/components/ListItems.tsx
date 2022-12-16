@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Todo } from "../api/data-contracts";
 
-class ListItems extends Component<{ items: Todo[]; }> {
+class ListItems extends Component<{readonly items: Readonly<Todo>[]}> {
   render() {
     return (
       <>
